@@ -8,7 +8,8 @@ app_name = 'api'
 urlpatterns = [
     path('', views.index, name='index'),
     path('login',views.login,name='login'),
-    path('signup',views.login,name='signup'),
+    path('signup',views.signup,name='signup'),
+    path('post',views.post,name='post'),
     # path('<int:question_id>/', views.detail, name='detail'),
     # # ex: /polls/5/results/
     # path('<int:question_id>/results/', views.results, name='results'),

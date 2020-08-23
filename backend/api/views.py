@@ -5,6 +5,7 @@ from django.http import Http404,JsonResponse
 from .models import User
 import logging
 logger = logging.getLogger('django')
+
 # Create your views here.
 def index(request):
 
@@ -20,3 +21,13 @@ def signup(request):
         logger.debug(request.body)
         User.save(request.body)
         return JsonResponse({'token':'hello','success':'ok'}) 
+
+
+def post(request):
+    if request.method == 'POST':
+        logger.debug(request.body)
+        User.save(request.body)
+        return JsonResponse({'token':'hello','success':'ok'}) 
+
+    if request.method=='GET':
+        return JsonResponse([{'url':'@/assets/imgs/salad.jpg','title':'watermelon'},{'url':'@/assets/imgs/salad.jpg','title':'salad'}],safe=False)

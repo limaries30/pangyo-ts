@@ -1,8 +1,13 @@
 import {instance} from './index'
 
+export interface Post{
+    url: string;
+    titile: string;
+}
+
 // 회원가입 API
-function getPosts() {
-    return instance.get('getPost');
+function getPosts(): Post[] {
+    return instance.get('post');
   }
 
 

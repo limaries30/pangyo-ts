@@ -25,6 +25,8 @@ import { Vue, Component } from 'vue-property-decorator';
 import AppHeader from '@/components/common/AppHeader.vue'
 import LayoutDefault from '@/components/common/LayoutDefault.vue'
 import Card from '@/components/main/Card.vue'
+import {getPosts,Post} from '@/api/post'
+
 @Component({  
   components: {
       AppHeader,
@@ -34,6 +36,22 @@ import Card from '@/components/main/Card.vue'
 })
 export default class MainPage extends Vue{
 
+
+
+
+
+async created()
+{
+    console.log("hi")
+    try{
+
+        console.log(await getPosts())
+    }
+    catch(err)
+    {
+        console.log(err)
+    }
+}
 
 }
 </script>
