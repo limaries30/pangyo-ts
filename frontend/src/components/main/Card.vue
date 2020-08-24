@@ -35,7 +35,7 @@ export default class Card extends Vue {
 
     .Header{
         text-align:center;
-        background-color:mediumspringgreen;
+        background-color:darkgreen;
     }
 
     .ImageSection{

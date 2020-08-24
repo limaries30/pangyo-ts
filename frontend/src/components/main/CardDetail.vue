@@ -1,15 +1,16 @@
 <template>
   <div>
-    {{name}}  
+    {{data.title}}  
     </div>
 </template>
 
 <script lang='ts'>
 import { Vue, Component, Prop } from 'vue-property-decorator';
+import {Post} from '@/api/types'
 @Component
 export default class CardDetail extends Vue {
 
-@Prop() name!: string;
+@Prop() data!: Post;
 
 }
 </script>

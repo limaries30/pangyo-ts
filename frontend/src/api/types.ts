@@ -5,7 +5,8 @@ export interface AxiosResp
 
 export interface Post{
     url: string;
-    titile: string;
+    title: string;
+    id: number;
 }
 
 export interface PostResp extends AxiosResp{

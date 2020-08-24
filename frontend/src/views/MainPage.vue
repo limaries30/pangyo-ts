@@ -11,8 +11,8 @@
       </div>
 </header>
 <template #main>
-       <Card v-for="item in datas" v-bind:data="item" v-bind:key="item.id"/>
-       <CardDetail v-for="item in datas" v-bind:data="item" v-bind:key="item.id"/>
+       <Card v-for="item in datas" v-bind:data="item" v-bind:key="item.id" @click.native="openDetail(item)"/>
+       <CardDetail v-if="showDetail" :data="detail"/>
 </template>
 
 </LayoutDefault>
@@ -39,6 +39,14 @@ import {Post} from '@/api/types'
 export default class MainPage extends Vue{
 
 datas: Post[]=[];
+showDetail = false;
+detail: Post={url:'',title:'',id:0}
+
+openDetail(item: Post){
+    console.log('clicking')
+    this.detail = Object.assign(item)
+    this.showDetail=!this.showDetail
+}
 
 async created()
 {
