@@ -1,12 +1,8 @@
 import {instance} from './index'
-
-export interface Post{
-    url: string;
-    titile: string;
-}
+import {PostResp} from './types'
 
 // 회원가입 API
-function getPosts(): Post[] {
+function getPosts(): Promise<PostResp> {
     return instance.get('post');
   }
 

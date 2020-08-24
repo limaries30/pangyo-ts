@@ -11,9 +11,7 @@
       </div>
 </header>
 <template #main>
-    <Card />
-    <Card />
-    <Card />
+       <Card v-for="item in datas" v-bind:data="item" v-bind:key="item.id"/>
 </template>
 
 </LayoutDefault>
@@ -25,7 +23,8 @@ import { Vue, Component } from 'vue-property-decorator';
 import AppHeader from '@/components/common/AppHeader.vue'
 import LayoutDefault from '@/components/common/LayoutDefault.vue'
 import Card from '@/components/main/Card.vue'
-import {getPosts,Post} from '@/api/post'
+import {getPosts} from '@/api/post'
+import {Post} from '@/api/types'
 
 @Component({  
   components: {
@@ -36,16 +35,14 @@ import {getPosts,Post} from '@/api/post'
 })
 export default class MainPage extends Vue{
 
-
-
-
+datas: Post[]=[];
 
 async created()
 {
-    console.log("hi")
     try{
 
-        console.log(await getPosts())
+         const res = await getPosts()
+         this.datas = res.data
     }
     catch(err)
     {
