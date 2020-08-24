@@ -12,7 +12,7 @@
 </header>
 <template #main>
        <Card v-for="item in datas" v-bind:data="item" v-bind:key="item.id" @click.native="openDetail(item)"/>
-       <CardDetail v-if="showDetail" :data="detail"/>
+       <CardDetail v-if="showDetail" :data="detail" v-on:close="close"/>
 </template>
 
 </LayoutDefault>
@@ -40,11 +40,16 @@ export default class MainPage extends Vue{
 
 datas: Post[]=[];
 showDetail = false;
-detail: Post={url:'',title:'',id:0}
+detail: Post={url:'',title:'',location:'',id:0}
 
 openDetail(item: Post){
     console.log('clicking')
     this.detail = Object.assign(item)
+    this.showDetail=!this.showDetail
+}
+
+close(){
+    this.detail = Object.assign({url:'',title:'',location:'',id:0})
     this.showDetail=!this.showDetail
 }
 

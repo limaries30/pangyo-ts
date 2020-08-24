@@ -1,7 +1,16 @@
 <template>
+  
   <div>
-    {{data.title}}  
-    </div>
+    <div>
+      <header @click="$emit('close')">
+        X
+        </header>
+    {{data.title}} 
+    </div> 
+  </div>
+
+
+
 </template>
 
 <script lang='ts'>

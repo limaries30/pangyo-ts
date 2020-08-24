@@ -30,4 +30,4 @@ def post(request):
         return JsonResponse({'token':'hello','success':'ok'}) 
 
     if request.method=='GET':
-        return JsonResponse([{'url':'./assets/imgs/salad.jpg','title':'watermelon'},{'url':'./assets/imgs/salad.jpg','title':'salad'}],safe=False)
+        return JsonResponse([{'url':'./assets/imgs/salad.jpg','title':'watermelon','id':0,'location':'maebong'},{'url':'./assets/imgs/salad.jpg','title':'salad','id':1,'location':'maebong'}],safe=False)

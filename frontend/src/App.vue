@@ -23,9 +23,9 @@ export default class App extends Vue {}
 </script>
 
 
-<style>
-@import './css/reset.css';
-@import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
+<style lang="scss">
+@import './css/reset.scss';
+@import './css/global.scss';
 </style>
 
 

@@ -65,13 +65,9 @@ a {
   font-size: 18px;
 }
 a.logo {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 900;
   color: white;
-}
-.logo > span {
-  font-size: 14px;
-  font-weight: normal;
 }
 .navigations a {
   margin-left: 10px;
