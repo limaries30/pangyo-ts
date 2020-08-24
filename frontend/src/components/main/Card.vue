@@ -1,7 +1,10 @@
 <template>
       <div class="ImageContainer">
+          <header class="Header">
+              {{data.title}}
+          </header>
         <section class="ImageSection">
-            <img class="ImageSection_img" src="@/assets/imgs/salad.jpg" />
+            <img class="ImageSection_img" src="../../assets/imgs/salad.jpg" />
         </section>
     </div>
 </template>
@@ -24,18 +27,25 @@ export default class Card extends Vue {
 <style lang="scss" scoped>
 
 .ImageContainer{
-    width:100%;
+    width:80%;
     height:40%;
     margin:1em auto;
+    display:flex;
+    flex-direction:column;
+
+    .Header{
+        text-align:center;
+        background-color:mediumspringgreen;
+    }
+
     .ImageSection{
      display:flex;
      flex-direction:row;
      justify-content: center;
     }
     .ImageSection_img{
-        width:80%;
+        width:100%;
         height:100%
-        ImageSection
     }
 }
 
