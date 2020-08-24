@@ -1,13 +1,17 @@
 <template>
   
-  <div>
-    <div>
-      <header @click="$emit('close')">
+  <CardModalLayout>
+    <template #header>
+      <div @click="$emit('close')">
         X
-        </header>
+      </div>
+    </template>
+    <template #content>
+    <div>
     {{data.title}} 
     </div> 
-  </div>
+    </template>
+ </CardModalLayout>
 
 
 
@@ -16,7 +20,12 @@
 <script lang='ts'>
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import {Post} from '@/api/types'
-@Component
+import CardModalLayout from './CardModalLayout.vue'
+@Component({  
+  components: {
+CardModalLayout
+  },
+})
 export default class CardDetail extends Vue {
 
 @Prop() data!: Post;
